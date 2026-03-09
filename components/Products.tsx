@@ -3,15 +3,14 @@
 import { motion } from "framer-motion";
 import Reveal from "@/components/ui/Reveal";
 
-const comingSoonCards = [
-  "Coming Soon",
-  "Coming Soon",
-  "Coming Soon",
-];
+const comingSoonCards = ["Coming Soon", "Coming Soon", "Coming Soon"];
 
 export default function Products() {
   return (
-    <section id="projects" className="mx-auto mt-4 max-w-7xl px-6 py-12 sm:px-10 sm:py-14">
+    <section
+      id="projects"
+      className="mx-auto mt-4 max-w-7xl px-6 py-12 sm:px-10 sm:py-14"
+    >
       <Reveal>
         <div className="mb-10">
           <p className="kicker text-sm font-semibold uppercase tracking-[0.14em]">

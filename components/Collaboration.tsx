@@ -5,7 +5,10 @@ import Reveal from "@/components/ui/Reveal";
 
 export default function Collaboration() {
   return (
-    <section id="contact" className="mx-auto mt-8 max-w-7xl px-6 pb-10 pt-6 sm:px-10 sm:pb-14">
+    <section
+      id="contact"
+      className="mx-auto mt-8 max-w-7xl px-6 pb-10 pt-6 sm:px-10 sm:pb-14"
+    >
       <Reveal className="section-shell rounded-3xl px-8 py-12 sm:px-12 sm:py-14">
         <p className="kicker text-sm font-semibold uppercase tracking-[0.14em]">
           Collaboration

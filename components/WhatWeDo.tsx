@@ -57,7 +57,9 @@ export default function WhatWeDo() {
               <h3 className="mt-4 text-xl font-semibold text-slate-100">
                 {item.title}
               </h3>
-              <p className="mt-3 leading-7 text-slate-300">{item.description}</p>
+              <p className="mt-3 leading-7 text-slate-300">
+                {item.description}
+              </p>
             </motion.article>
           </Reveal>
         ))}

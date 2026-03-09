@@ -32,9 +32,7 @@ export default function Footer() {
           </nav>
         </div>
         <div className="mt-8 border-t border-slate-700/50 pt-6 text-sm text-slate-400">
-          <p>
-            © {currentYear} Mist Solutions. Building products with intent.
-          </p>
+          <p>© {currentYear} Mist Solutions. Building products with intent.</p>
         </div>
       </div>
     </footer>
