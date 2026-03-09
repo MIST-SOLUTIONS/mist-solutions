@@ -8,36 +8,51 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "MIST Solutions | Building Digital Products for the Future",
+  metadataBase: new URL("https://mist.solutions"),
+  title: "MIST Solutions | Focused Digital Product Studio",
   description:
-    "MIST Solutions is a Belgian holding company developing innovative digital products across HR tech, AI, and business automation. We build scalable solutions that deliver measurable impact.",
+    "MIST Solutions is a Belgian product studio building scalable digital ventures in HR tech, AI, and business automation.",
   keywords: [
     "MIST Solutions",
+    "product studio",
     "HR tech",
     "AI",
     "business automation",
-    "digital products",
     "Belgium",
     "Assess4Me",
   ],
   authors: [{ name: "MIST Solutions" }],
   openGraph: {
-    title: "MIST Solutions | Building Digital Products for the Future",
+    title: "MIST Solutions | Focused Digital Product Studio",
     description:
-      "Developing innovative digital products across HR tech, AI, and business automation.",
+      "We build disciplined, scalable digital products designed for long-term impact.",
+    url: "https://mist.solutions",
+    siteName: "MIST Solutions",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body
+        className={`${inter.variable} font-sans antialiased bg-white text-slate-900`}
+      >
         {children}
       </body>
     </html>

@@ -3,66 +3,65 @@ export default function Products() {
     {
       title: "Assess4Me",
       description:
-        "An AI-powered gamified recruitment platform that transforms how companies discover and evaluate talent. Built for modern HR teams who value data-driven insights and candidate experience.",
+        "An AI-powered gamified recruitment platform transforming how companies discover and evaluate talent.",
+      tags: ["AI", "Gamified Assessment", "HR Tech"],
+      status: "Live Product",
       link: "#",
-      available: true,
     },
     {
-      title: "More ventures coming soon",
+      title: "New ventures in development",
       description:
-        "We're constantly exploring new opportunities in AI, automation, and digital transformation. Stay tuned for our next launch.",
+        "We are actively exploring new opportunities in AI, automation, and vertical SaaS.",
+      tags: ["AI", "Automation"],
+      status: "In Development",
       link: null,
-      available: false,
     },
   ];
 
   return (
-    <section id="products" className="px-6 py-24 sm:py-32 lg:px-8 bg-slate-50">
+    <section id="products" className="px-6 py-28 lg:px-8 bg-white">
       <div className="mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Our Products
-          </h2>
+          <h2 className="text-3xl font-bold sm:text-4xl">Our Products</h2>
           <p className="mt-4 text-lg text-slate-600">
-            Digital solutions built for real business impact
+            Digital solutions built for measurable impact
           </p>
         </div>
-        <div className="grid gap-8 sm:grid-cols-2 lg:gap-12">
+
+        <div className="grid gap-10 sm:grid-cols-2">
           {products.map((product) => (
             <div
               key={product.title}
-              className={`rounded-xl bg-white p-8 shadow-sm ring-1 ring-slate-200 transition-shadow hover:shadow-md ${
-                !product.available ? "opacity-75" : ""
-              }`}
+              className="rounded-2xl bg-slate-50 p-8 shadow-md hover:shadow-xl transition-all duration-300"
             >
-              <h3 className="text-2xl font-semibold text-slate-900">
-                {product.title}
-              </h3>
+              <span className="inline-flex items-center rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-600 ring-1 ring-slate-200">
+                {product.status}
+              </span>
+
+              <h3 className="mt-6 text-2xl font-semibold">{product.title}</h3>
+
               <p className="mt-4 text-base leading-7 text-slate-600">
                 {product.description}
               </p>
-              {product.link && (
-                <div className="mt-6">
-                  <a
-                    href={product.link}
-                    className="inline-flex items-center text-sm font-semibold text-slate-900 hover:text-slate-700 transition-colors"
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                {product.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs bg-white px-2 py-1 rounded-md ring-1 ring-slate-200"
                   >
-                    Learn more
-                    <svg
-                      className="ml-2 h-4 w-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </a>
-                </div>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {product.link && (
+                <a
+                  href={product.link}
+                  className="mt-8 inline-flex items-center text-sm font-semibold hover:opacity-70 transition"
+                >
+                  Learn more →
+                </a>
               )}
             </div>
           ))}
