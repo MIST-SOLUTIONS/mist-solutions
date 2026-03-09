@@ -1,22 +1,18 @@
 import Hero from "@/components/Hero";
-import Credibility from "@/components/Credibility";
 import About from "@/components/About";
-import Why from "@/components/Why";
 import Products from "@/components/Products";
-import Vision from "@/components/Vision";
-import Contact from "@/components/Contact";
+import WhatWeDo from "@/components/WhatWeDo";
+import Collaboration from "@/components/Collaboration";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative overflow-hidden px-4 pb-8 pt-4 sm:px-6 lg:px-10">
       <Hero />
-      <Credibility />
       <About />
-      <Why />
       <Products />
-      <Vision />
-      <Contact />
+      <WhatWeDo />
+      <Collaboration />
       <Footer />
     </main>
   );

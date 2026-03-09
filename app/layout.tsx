@@ -1,33 +1,39 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manrope, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mist.solutions"),
-  title: "MIST Solutions | Focused Digital Product Studio",
+  title: "Mist Solutions | Antwerp Product Studio",
   description:
-    "MIST Solutions is a Belgian product studio building scalable digital ventures in HR tech, AI, and business automation.",
+    "Mist Solutions is an Antwerp-based startup building modern digital products with AI, software engineering, product design, and experimentation.",
   keywords: [
-    "MIST Solutions",
+    "Mist Solutions",
+    "Antwerp startup",
     "product studio",
-    "HR tech",
+    "digital products",
     "AI",
-    "business automation",
-    "Belgium",
+    "software engineering",
+    "product design",
     "Assess4Me",
   ],
-  authors: [{ name: "MIST Solutions" }],
+  authors: [{ name: "Mist Solutions" }],
   openGraph: {
-    title: "MIST Solutions | Focused Digital Product Studio",
+    title: "Mist Solutions | Antwerp Product Studio",
     description:
-      "We build disciplined, scalable digital products designed for long-term impact.",
+      "We build modern digital products and experiments, with Assess4Me as our first launched project.",
     url: "https://mist.solutions",
-    siteName: "MIST Solutions",
+    siteName: "Mist Solutions",
     type: "website",
     locale: "en_US",
     images: [
@@ -51,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} font-sans antialiased bg-white text-slate-900`}
+        className={`${manrope.variable} ${spaceGrotesk.variable} font-sans antialiased`}
       >
         {children}
       </body>
