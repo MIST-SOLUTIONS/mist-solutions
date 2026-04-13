@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { DM_Sans, Newsreader } from "next/font/google";
 import "./globals.css";
 
@@ -49,15 +50,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const nonce = (await headers()).get("x-nonce") ?? "";
+
   return (
     <html lang="en" className="scroll-smooth">
       <body
         className={`${dmSans.variable} ${newsreader.variable} font-sans antialiased`}
+        nonce={nonce}
       >
         {children}
       </body>
