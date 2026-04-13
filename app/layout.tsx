@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { DM_Sans, Newsreader } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -67,6 +68,7 @@ export default async function RootLayout({
         {children}
       </body>
       <Analytics />
+      <SpeedInsights />
     </html>
   );
 }
