@@ -139,15 +139,14 @@ export default function Hero() {
 
           <Reveal delay={0.18} className="h-full">
             <div className="relative overflow-hidden rounded-[2rem] border border-[rgba(24,33,38,0.12)] bg-[#1b2428] p-6 text-[#f6efe6] soft-shadow sm:p-8">
-              <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/10 to-transparent" />
-              <div className="relative max-w-xl">
+              <div className="relative z-10 max-w-xl">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#ffd0b8]">
                     Studio snapshot
                   </p>
                   <h2
-                    className="mt-5 text-3xl sm:text-4xl"
-                    style={{ color: "#fffaf4" }}
+                    className="mt-5 text-3xl font-semibold sm:text-4xl drop-shadow-md"
+                    style={{ color: "#ffffff" }}
                   >
                     Product thinking first. Technology in service of clarity.
                   </h2>
