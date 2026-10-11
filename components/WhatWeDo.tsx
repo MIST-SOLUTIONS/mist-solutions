@@ -1,101 +1,56 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Reveal from "@/components/ui/Reveal";
 
 const capabilities = [
   {
-    title: "AI-Powered Products",
-    description:
-      "We integrate practical AI into real product experiences, not feature demos.",
-    icon: "01",
+    mark: "A",
+    title: "AI-powered products",
+    description: "Practical AI inside real product experiences — not feature demos.",
   },
   {
-    title: "Web Platforms",
-    description:
-      "Fast, scalable platforms built with modern engineering standards.",
-    icon: "02",
+    mark: "B",
+    title: "Web platforms",
+    description: "Fast, scalable platforms built to modern engineering standards.",
   },
   {
-    title: "Product Design",
-    description:
-      "Clear product thinking, from concept to a polished user experience.",
-    icon: "03",
+    mark: "C",
+    title: "Product design",
+    description: "Clear product thinking, from concept to a polished experience.",
   },
   {
-    title: "Experimental Technology",
-    description:
-      "We validate bold ideas quickly and ship what proves meaningful.",
-    icon: "04",
+    mark: "D",
+    title: "Experimental tech",
+    description: "Validate bold ideas quickly; ship what proves meaningful.",
   },
 ];
 
 export default function WhatWeDo() {
   return (
-    <section className="mx-auto mt-6 max-w-7xl px-6 py-10 sm:px-10 sm:py-14 lg:px-12">
-      <Reveal>
-        <div className="mb-9 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="kicker text-sm font-semibold uppercase">What We Do</p>
-            <h2 className="mt-3 max-w-3xl text-4xl sm:text-5xl">
-              Capabilities that cover the product from framing to launch.
-            </h2>
-          </div>
-          <p className="meta-copy max-w-xl text-base leading-7 lg:text-right">
-            We work across the full product surface, but we keep the decisions
-            connected so the outcome feels like one idea.
-          </p>
-        </div>
-      </Reveal>
-
-      <div className="grid gap-4 lg:grid-cols-4">
-        {capabilities.map((item, index) => (
-          <Reveal key={item.title} delay={index * 0.08}>
-            <motion.article
-              whileHover={{ y: -4 }}
-              className="section-shell rounded-[1.75rem] p-6"
-            >
-              <span className="text-sm font-semibold uppercase tracking-[0.22em] text-[#b35a38]">
-                {item.icon}
-              </span>
-              <h3 className="mt-6 text-2xl">{item.title}</h3>
-              <p className="meta-copy mt-3 leading-7">{item.description}</p>
-            </motion.article>
-          </Reveal>
-        ))}
+    <section className="mx-auto max-w-[1360px] px-4 pt-16 sm:px-6 sm:pt-28 lg:px-10">
+      <div className="flex flex-wrap items-end justify-between gap-6">
+        <Reveal>
+          <h2 className="text-[clamp(44px,6vw,96px)] font-extrabold leading-[0.92] tracking-[-0.045em]">
+            Capabilities
+          </h2>
+        </Reveal>
+        <p className="label text-muted">(04) Framing → launch</p>
       </div>
 
-      <Reveal delay={0.26}>
-        <div className="mt-6 grid gap-4 rounded-[2rem] border border-[rgba(24,33,38,0.08)] bg-[#182126] px-7 py-8 text-[#f5eee5] sm:grid-cols-3 sm:px-8 sm:py-9">
-          <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-[#f0b496]">
-              Frame
-            </p>
-            <p className="mt-3 text-lg leading-7">
-              Clarify the product thesis, user problem, and smallest useful
-              release.
-            </p>
-          </div>
-          <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-[#f0b496]">
-              Design
-            </p>
-            <p className="mt-3 text-lg leading-7">
-              Turn the product into a system of screens, states, and priorities
-              that makes sense.
-            </p>
-          </div>
-          <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-[#f0b496]">
-              Ship
-            </p>
-            <p className="mt-3 text-lg leading-7">
-              Build with modern web tooling, practical AI, and enough structure
-              to scale later.
-            </p>
-          </div>
-        </div>
-      </Reveal>
+      <div className="mt-10 grid border-l border-t border-ink sm:grid-cols-2 lg:grid-cols-4">
+        {capabilities.map((item) => (
+          <article
+            key={item.title}
+            className="flex min-h-[220px] flex-col justify-between gap-6 border-b border-r border-ink p-8"
+          >
+            <span className="font-mono text-[13px] text-signal" aria-hidden="true">
+              {item.mark}
+            </span>
+            <div>
+              <h3 className="text-[28px] font-bold tracking-[-0.02em]">{item.title}</h3>
+              <p className="mt-2.5 leading-relaxed text-body">{item.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }

@@ -1,20 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-newsreader), ui-serif, Georgia, serif;
-}
+  --font-sans: var(--font-schibsted), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 
-:root {
-  --mist-ink: #182126;
-  --mist-muted: #5f6a66;
-  --mist-surface: rgba(255, 251, 245, 0.82);
-  --mist-surface-strong: rgba(255, 247, 238, 0.94);
-  --mist-line: rgba(24, 33, 38, 0.12);
-  --mist-accent: #d96f4a;
-  --mist-accent-deep: #aa4e31;
-  --mist-emerald: #1f5c57;
-  --mist-shadow: 0 28px 80px rgba(69, 48, 34, 0.14);
+  --color-paper: #f1f2ee;
+  --color-ink: #0f1113;
+  --color-body: #3d4247;
+  --color-muted: #565c61;
+  --color-signal: #2633e8;
+  --color-signal-soft: #dce0ff;
+  --color-signal-tint: #8c95ff;
 }
 
 html {
@@ -22,175 +18,226 @@ html {
 }
 
 body {
+  background: var(--color-paper);
+  color: var(--color-ink);
   font-family: var(--font-sans);
-  background:
-    radial-gradient(circle at top left, rgba(217, 111, 74, 0.2), transparent 34%),
-    radial-gradient(circle at 88% 8%, rgba(31, 92, 87, 0.16), transparent 28%),
-    linear-gradient(180deg, #f7efe5 0%, #f4eee7 42%, #efe5da 100%);
-  color: var(--mist-ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.18)),
-    repeating-linear-gradient(
-      90deg,
-      transparent 0,
-      transparent 119px,
-      rgba(24, 33, 38, 0.028) 120px
-    );
-  opacity: 0.65;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.8), transparent 92%);
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-display);
-  letter-spacing: -0.03em;
-  color: #152025;
-}
-
-a {
-  color: inherit;
-}
-
 ::selection {
-  background: rgba(217, 111, 74, 0.18);
-  color: #111827;
+  background: var(--color-signal);
+  color: #fff;
 }
 
-.page-frame {
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 4px;
+}
+
+/* Mono uppercase label used for section numbers and metadata */
+.label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Nav links: underline slides in from the left */
+.nav-link {
   position: relative;
+  padding: 12px 0;
+  text-decoration: none;
 }
 
-.page-frame::after {
+.nav-link::after {
   content: "";
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 12% 14%, rgba(255, 255, 255, 0.64), transparent 24%),
-    radial-gradient(circle at 78% 12%, rgba(255, 255, 255, 0.44), transparent 30%),
-    radial-gradient(circle at 70% 78%, rgba(31, 92, 87, 0.08), transparent 28%);
-  z-index: -1;
-}
-
-.section-shell {
-  border: 1px solid var(--mist-line);
-  background: linear-gradient(180deg, var(--mist-surface-strong), var(--mist-surface));
-  box-shadow: var(--mist-shadow);
-  backdrop-filter: blur(14px);
-}
-
-.section-grid {
-  position: relative;
-}
-
-.section-grid::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.45), transparent 42%),
-    linear-gradient(315deg, rgba(217, 111, 74, 0.08), transparent 48%);
-  pointer-events: none;
-}
-
-.soft-shadow {
-  box-shadow: 0 22px 60px rgba(69, 48, 34, 0.12);
-}
-
-.kicker {
-  color: var(--mist-accent-deep);
-  letter-spacing: 0.24em;
-}
-
-.label-pill {
-  border: 1px solid rgba(24, 33, 38, 0.12);
-  background: rgba(255, 253, 250, 0.75);
-  color: #27343a;
-}
-
-.btn-primary {
-  background: var(--mist-ink);
-  color: #fff7f0;
-  box-shadow: 0 14px 34px rgba(24, 33, 38, 0.18);
-}
-
-.btn-primary:hover {
-  background: #10181c;
-  transform: translateY(-1px);
-}
-
-.btn-secondary:hover {
-  background: rgba(255, 248, 240, 0.98);
-}
-
-.btn-secondary {
-  border: 1px solid rgba(24, 33, 38, 0.16);
-  background: rgba(255, 251, 245, 0.78);
-  color: var(--mist-ink);
-}
-
-.eyebrow-rule {
+  inset-inline: 0;
+  bottom: 8px;
   height: 1px;
-  flex: 1;
-  background: linear-gradient(90deg, rgba(24, 33, 38, 0.22), transparent);
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.accent-orb {
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Hero wordmark: each letter rises out of a mask */
+.rise-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  /* The tight line-height would otherwise crop the baseline (and the full stop) */
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+
+.rise {
+  display: inline-block;
+  animation: rise 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(105%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.9s ease 0.7s both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Marquee ticker */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Work index rows: signal-blue fill sweeps in on hover */
+.index-row {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  padding: 28px 8px;
+  border-top: 1px solid var(--color-ink);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.index-row::before {
+  content: "";
   position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--color-signal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.index-row:hover {
+  color: #fff;
+}
+
+.index-row:hover::before {
+  transform: scaleX(1);
+}
+
+.index-row:hover .chip {
+  border-color: #fff;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--color-ink);
   border-radius: 9999px;
-  filter: blur(70px);
-  opacity: 0.55;
+  padding: 6px 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-@keyframes drift {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 26px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.btn-ink {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.btn-ink:hover {
+  background: var(--color-signal);
+  color: #fff;
+}
+
+.btn-line {
+  border: 1px solid var(--color-ink);
+  color: var(--color-ink);
+}
+
+.btn-line:hover {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.btn-white {
+  background: #fff;
+  color: var(--color-signal);
+}
+
+.btn-white:hover {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+/* Contact email: thick underline draws in on hover */
+.big-mail {
+  text-decoration: none;
+  background: linear-gradient(var(--color-signal), var(--color-signal)) left 92% / 0% 6px no-repeat;
+  transition: background-size 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.big-mail:hover {
+  background-size: 100% 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-  50% {
-    transform: translate3d(0, -16px, 0) scale(1.03);
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
   }
-}
-
-.drift-slow {
-  animation: drift 10s ease-in-out infinite;
-}
-
-.drift-delayed {
-  animation: drift 14s ease-in-out infinite;
-  animation-delay: 1.8s;
-}
-
-.number-mark {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 5rem);
-  line-height: 0.9;
-  color: rgba(24, 33, 38, 0.14);
-}
-
-.grid-wash {
-  background-image:
-    linear-gradient(rgba(24, 33, 38, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(24, 33, 38, 0.05) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
-
-.meta-copy {
-  color: var(--mist-muted);
-}
-
-.line-divider {
-  border-color: rgba(24, 33, 38, 0.1);
 }

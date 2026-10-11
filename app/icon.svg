@@ -1,13 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <!-- Background -->
-  <rect width="32" height="32" rx="8" fill="#1b2428"/>
-
-  <!-- M lettermark -->
-  <path
-    d="M7 22V10h1.6l5.4 8.4 5.4-8.4H21v12h-2V13.8l-4.8 7.4h-.4L9 13.8V22H7Z"
-    fill="#f5e6d4"
-  />
-
-  <!-- Accent dot -->
-  <circle cx="25" cy="9" r="2.5" fill="#d96f4a"/>
+  <rect width="32" height="32" rx="7" fill="#0f1113"/>
+  <!-- "M." wordmark: paper M with a signal-blue full stop -->
+  <path d="M6.5 23V9.5l6.25 8 6.25-8V23" stroke="#f1f2ee" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="square"/>
+  <circle cx="24.5" cy="21.3" r="2.4" fill="#5b68ff"/>
 </svg>

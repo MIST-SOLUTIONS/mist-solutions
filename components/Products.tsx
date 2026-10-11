@@ -1,134 +1,93 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Reveal from "@/components/ui/Reveal";
 
-const comingSoonCards = [
-  {
-    title: "Workflow Intelligence",
-    description:
-      "AI-assisted tools that remove repetitive decisions from daily operations.",
-  },
-  {
-    title: "Vertical SaaS Concepts",
-    description:
-      "Tighter software for narrow but meaningful business problems.",
-  },
-  {
-    title: "Interface Experiments",
-    description:
-      "New interaction models for products that need clarity more than novelty.",
-  },
+const facts = [
+  { label: "Positioning", value: "Friendlier candidate experience" },
+  { label: "Focus", value: "Better recruiter signal" },
+  { label: "Craft", value: "Clear UX, practical AI" },
 ];
+
+const numCol = "flex-[0_0_56px]";
+const nameCol = "flex-[2_1_260px] text-[clamp(28px,3.4vw,48px)] font-bold tracking-[-0.03em]";
+const briefCol = "flex-[3_1_320px] text-[17px] leading-normal";
+const statusCol = "flex-[0_0_160px]";
 
 export default function Products() {
   return (
-    <section
-      id="projects"
-      className="mx-auto mt-4 max-w-7xl px-6 py-14 sm:px-10 sm:py-16 lg:px-12"
-    >
-      <Reveal>
-        <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="kicker text-sm font-semibold uppercase">
-              Our Projects
-            </p>
-            <h2 className="mt-3 max-w-3xl text-4xl sm:text-5xl">
-              One launched product, several deliberate bets in motion.
-            </h2>
-          </div>
-          <p className="meta-copy max-w-xl text-base leading-7 sm:text-right">
-            We prefer a small portfolio of sharp products over broad, unfocused
-            output.
-          </p>
-        </div>
-      </Reveal>
-
-      <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(340px,0.95fr)] lg:items-start">
+    <section id="work" className="mx-auto max-w-[1360px] px-4 pt-20 sm:px-6 sm:pt-28 lg:px-10">
+      <div className="flex flex-wrap items-end justify-between gap-6">
         <Reveal>
-          <motion.article
-            whileHover={{ y: -6 }}
-            transition={{ duration: 0.3 }}
-            className="section-shell relative overflow-hidden rounded-[2rem] p-6 sm:p-7 lg:p-8"
-          >
-            <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-[#f0b79e]/30 blur-3xl" />
-            <span className="inline-flex rounded-full border border-[#1f5c57]/20 bg-[#1f5c57]/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.13em] text-[#1f5c57]">
-              Live Project
-            </span>
-            <h3 className="mt-5 text-3xl sm:text-[2.2rem]">Assess4Me</h3>
-            <p className="mt-3 text-base text-[#33444b] sm:text-lg">
-              Gamified recruitment assessments powered by AI.
-            </p>
-            <p className="meta-copy mt-4 max-w-2xl leading-7">
-              A platform where candidates complete cognitive and behavioral
-              games to help recruiters gain additional insights during hiring.
-            </p>
+          <h2 className="text-[clamp(44px,6vw,96px)] font-extrabold leading-[0.92] tracking-[-0.045em]">
+            Index of work
+          </h2>
+        </Reveal>
+        <p className="label text-muted">(02) Selected work</p>
+      </div>
 
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-[1.5rem] border border-[rgba(24,33,38,0.08)] bg-white/65 px-4 py-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-[#6b7772]">
-                  Positioning
-                </p>
-                <p className="mt-3 text-sm leading-6 text-[#26333a]">
-                  AI-enabled assessment with a friendlier candidate experience.
-                </p>
-              </div>
-              <div className="rounded-[1.5rem] border border-[rgba(24,33,38,0.08)] bg-white/65 px-4 py-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-[#6b7772]">
-                  Focus
-                </p>
-                <p className="mt-3 text-sm leading-6 text-[#26333a]">
-                  Better signal for recruiters without turning hiring into
-                  guesswork.
-                </p>
-              </div>
-              <div className="rounded-[1.5rem] border border-[rgba(24,33,38,0.08)] bg-white/65 px-4 py-4 sm:col-span-2">
-                <p className="text-xs uppercase tracking-[0.18em] text-[#6b7772]">
-                  Craft
-                </p>
-                <p className="mt-3 text-sm leading-6 text-[#26333a]">
-                  Clear UX, practical AI, and modern frontend execution.
-                </p>
-              </div>
-            </div>
+      <div
+        aria-hidden="true"
+        className="label mt-12 hidden gap-x-6 px-2 pb-3 text-[12px] text-muted md:flex"
+      >
+        <span className={numCol}>No.</span>
+        <span className="flex-[2_1_260px]">Project</span>
+        <span className="flex-[3_1_320px]">Brief</span>
+        <span className={statusCol}>Status</span>
+      </div>
 
+      <a className="index-row mt-10 md:mt-0" href="https://assess4me.com" target="_blank" rel="noreferrer">
+        <span className={`${numCol} font-mono text-sm`}>001</span>
+        <span className={nameCol}>
+          Assess4Me <span aria-hidden="true">↗</span>
+        </span>
+        <span className={briefCol}>Gamified recruitment assessments powered by AI.</span>
+        <span className={statusCol}>
+          <span className="chip">● Live</span>
+        </span>
+      </a>
+
+      <a className="index-row border-b border-ink" href="#contact">
+        <span className={`${numCol} font-mono text-sm`}>002</span>
+        <span className={`${nameCol} opacity-55`}>Your product?</span>
+        <span className={briefCol}>Have an idea with real product ambition? Let’s talk.</span>
+        <span className={statusCol}>
+          <span className="chip border-dashed">Open</span>
+        </span>
+      </a>
+
+      <Reveal className="mt-16 sm:mt-28">
+        <article className="grid gap-12 bg-signal p-7 text-white sm:p-12 lg:grid-cols-2 lg:p-18">
+          <div>
+            <p className="label text-signal-soft">Featured — 001</p>
+            <h3 className="mt-5 text-[clamp(56px,8vw,128px)] font-extrabold leading-[0.85] tracking-[-0.06em]">
+              Assess
+              <br />
+              4Me
+            </h3>
+          </div>
+          <div className="flex flex-col justify-between gap-8">
+            <p className="text-[clamp(20px,2vw,26px)] font-medium leading-[1.35]">
+              Candidates complete short cognitive and behavioural games.
+              Recruiters get sharper signal — without turning hiring into
+              guesswork.
+            </p>
+            <dl className="grid grid-cols-1 gap-4 border-t border-white/40 pt-5 sm:grid-cols-3">
+              {facts.map((fact) => (
+                <div key={fact.label}>
+                  <dt className="label text-[11px] text-signal-soft">{fact.label}</dt>
+                  <dd className="mt-2 text-[15px] leading-snug">{fact.value}</dd>
+                </div>
+              ))}
+            </dl>
             <a
+              className="btn btn-white self-start"
               href="https://assess4me.com"
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#aa4e31] transition hover:text-[#8f4028]"
             >
-              Visit Assess4Me
-              <span aria-hidden="true">↗</span>
+              Visit assess4me.com <span aria-hidden="true">↗</span>
             </a>
-          </motion.article>
-        </Reveal>
-
-        <div className="grid gap-5 sm:grid-cols-2 sm:gap-4">
-          {comingSoonCards.map((item, index) => (
-            <Reveal key={item.title} delay={0.08 * (index + 1)}>
-              <motion.article
-                whileHover={{ y: -4, scale: 1.01 }}
-                className="section-shell relative overflow-hidden rounded-[1.75rem] p-6"
-              >
-                <div className="absolute -right-7 -top-7 h-20 w-20 rounded-full bg-[#9bc5be]/35 blur-2xl" />
-                <span className="rounded-full border border-[rgba(24,33,38,0.12)] bg-white/70 px-3 py-1 text-xs uppercase tracking-[0.13em] text-[#56625e]">
-                  In Development
-                </span>
-                <h3 className="mt-5 text-2xl">{item.title}</h3>
-                <p className="meta-copy mt-3 leading-7">{item.description}</p>
-              </motion.article>
-            </Reveal>
-          ))}
-
-          <Reveal delay={0.32} className="sm:col-span-2">
-            <div className="rounded-[1.75rem] border border-dashed border-[rgba(24,33,38,0.18)] px-6 py-8 text-center text-[#435159]">
-              We are building slowly on purpose. Better products come from
-              pressure-tested conviction, not volume.
-            </div>
-          </Reveal>
-        </div>
-      </div>
+          </div>
+        </article>
+      </Reveal>
     </section>
   );
 }
