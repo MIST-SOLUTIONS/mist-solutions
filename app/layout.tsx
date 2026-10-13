@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mist.solutions"),
+  metadataBase: new URL("https://www.mist-solutions.com"),
   title: "Mist Solutions | Antwerp Product Studio",
   description:
     "Mist Solutions is an Antwerp-based startup building modern digital products with AI, software engineering, product design, and experimentation.",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Mist Solutions | Antwerp Product Studio",
     description:
       "We build modern digital products and experiments, with Assess4Me as our first launched project.",
-    url: "https://mist.solutions",
+    url: "https://www.mist-solutions.com",
     siteName: "Mist Solutions",
     type: "website",
     locale: "en_US",
